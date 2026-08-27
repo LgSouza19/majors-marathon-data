@@ -1,0 +1,36 @@
+name: marathon-data
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  # Scraping & APIs
+  - requests
+  - httpx
+  - beautifulsoup4
+  - lxml
+  - tqdm
+  # Big Data & Armazenamento
+  - numpy
+  - pandas
+  - polars
+  - pyarrow
+  - fastparquet
+  - duckdb
+  # Estatística & ML
+  - scipy
+  - statsmodels
+  - lifelines
+  - scikit-learn
+  - xgboost
+  - lightgbm
+  # Visualização & Dashboards
+  - matplotlib
+  - seaborn
+  - plotly
+  - streamlit
+  # Dev & Validação
+  - jupyter
+  - ipykernel
+  - pydantic
+  - pip
