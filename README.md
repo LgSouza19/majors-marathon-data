@@ -35,16 +35,16 @@ O repositório adota a separação rigorosa entre dados brutos e dados analític
 
 1. **Parciais de 5 em 5 km:** `Time5K`, `Time10K`, `Time15K`, `Time20K`, `TimeHalf`, `Time25K`, `Time30K`, `Time35K`, `Time40K`, `ChipFinish`.
 2. **Ritmos em Padrão Métrico Internacional:** Paces calculados matematicamente do zero a partir dos segundos e distâncias métricas:
-   $$\text{Pace Segmento (min/km)} = \frac{\Delta \text{Tempo em Segundos} / 5.0 \text{ km}}{60}$$
-   $$\text{Pace Geral (min/km)} = \frac{\text{ChipFinish em Segundos} / 42.195 \text{ km}}{60}$$
+   - **Pace do Segmento (min/km):** `(Delta_Tempo_Segundos / 5.0 km) / 60`
+   - **Pace Geral da Prova (min/km):** `(ChipFinish_Segundos / 42.195 km) / 60`
 3. **Métricas de Pacing e Quebra Fisiológica (*Hit the Wall*):**
-   - **`Pacing_Ratio`:** $\frac{\text{Tempo da 2ª Meia (s)}}{\text{Tempo da 1ª Meia (s)}}$
-   - **`Hit_The_Wall`:** Critério canônico da literatura ($\text{Pacing\_Ratio} \ge 1.20$ — segunda metade $\ge 20\%$ mais lenta que a primeira).
+   - **`Pacing_Ratio`:** `Tempo da 2ª Meia (s) / Tempo da 1ª Meia (s)`
+   - **`Hit_The_Wall`:** Critério canônico da literatura (`Pacing_Ratio >= 1.20` — segunda metade $\ge 20\%$ mais lenta que a primeira).
    - **`Newton_Hills_Decay_Pct`:** Queda percentual de ritmo no trecho crítico das subidas (km 30–35 em Boston em relação à base inicial).
 4. **Auditoria Ética e Integridade de Percurso (*Um Golpe Por Milha*):**
    - `Flag_Missing_Mats`: Atleta concluinte com perda de registro em tapetes intermediários em edições com infraestrutura ativa (distinguindo ausência tecnológica histórica de potencial corte de percurso).
-   - `Flag_Pace_Impossivel`: Ritmos intermediários fisiologicamente inverossímeis para amadores (< 2:30 min/km ou $\le 0$).
-   - `Flag_Negative_Split_Extremo`: Segunda metade $\ge 25\%$ mais rápida que a primeira ($\text{Pacing\_Ratio} < 0.75$).
+   - `Flag_Pace_Impossivel`: Ritmos intermediários fisiologicamente inverossímeis para amadores (`Pace < 2:30 min/km` ou $\le 0$).
+   - `Flag_Negative_Split_Extremo`: Segunda metade $\ge 25\%$ mais rápida que a primeira (`Pacing_Ratio < 0.75`).
 
 ---
 
