@@ -16,12 +16,7 @@ ENV/
 */.ipynb_checkpoints/*
 
 # Base de Dados e Dados Locais (Gigabytes)
-data/raw/*
-data/processed/*
-!data/raw/.gitkeep
-!data/processed/.gitkeep
-*.parquet
-*.csv
+
 
 # Arquivos do Sistema Operacional e IDEs
 .DS_Store
